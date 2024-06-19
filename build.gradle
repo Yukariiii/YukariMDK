@@ -20,6 +20,18 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+
+    maven {
+        url "https://mvn.cloud.alipay.com/nexus/content/repositories/open/"
+    }
+
+    maven{
+        url 'https://maven.aliyun.com/nexus/content/groups/public/'
+    }
+
+    maven {
+        url 'https://maven.aliyun.com/nexus/content/repositories/google'
+    }
 }
 
 base {
@@ -97,6 +109,7 @@ dependencies {
     // And its provides the option to then use net.minecraft as the group, and one of; client, server or joined as the module name, plus the game version as version.
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
